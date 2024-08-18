@@ -5,18 +5,16 @@ on: [push,pull_request]
 jobs:
     demo2:
       runs-on: ubuntu-latest
-
-    steps:
-    - uses: actions/checkout@v4
-    - name: Set up Python 3.10
-      uses: actions/setup-python@v3
-      with:
-        python-version: "3.10"
-    - name: Install dependencies
-      run: |
-        python -m pip install --upgrade pip
-        pip install -r requirement.txt
-     
-    - name: run code
-      run: |
-          python hello.py
+      steps:
+       - uses: actions/checkout@v4
+       - name: Set up Python 3.10
+         uses: actions/setup-python@v3
+         with:
+          python-version: "3.10"
+       - name:  Install dependencies
+          run:|
+              python -m pip install --upgrade pip
+              pip install -r requirement.txt
+       - name: run code
+           run:|
+               python hello.py
